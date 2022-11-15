@@ -2,7 +2,7 @@
 
 ระบบวัดทิศทางลม เพื่อการแจ้งเตือน หรือควบคุมสั่งการอัตโนมัติ พร้อม Web Monitoring & WiFi management สำหรับ New Micromation Dev Board V.2 Lite with ESP32 ใช้ในการแสดงผลค่าต่างที่วัดได้ และการตั้งค่าต่างๆ ผ่านเว็บบราวเซอร์
 
-![wind direction indicator](https://github.com/imiconsystem/ready2u-wind-direction/images/wind-dir-indicator-web.gif)
+![wind direction indicator](https://github.com/imiconsystem/ready2u-wind-direction/blob/main/images/wind-dir-indicator-web.gif)
 
 
 ## ฟีเจอร์การแสดงผลและสั่งงาน
@@ -29,7 +29,7 @@
 
 ใช้ Micromation – Lite with RS-485 Module ต่อใช้งานร่วมกับ RS-FX-N01 RS485 Modbus เซ็นเซอร์วัดทิศทางลม ผ่าน RTU / RS-485 ด้วยโปรโตคอล Modbus Protocol โดยใช้คอนโทรลเลอร์ ESP32 Dev Kit V1
 
-![wind direction indicator](https://github.com/imiconsystem/ready2u-wind-direction/images/wiring diagram.jpg)
+![wind direction indicator](https://github.com/imiconsystem/ready2u-wind-direction/blob/main/images/wiring%20diagram.jpg)
 
 ** โปรดระมัดระวัง! อย่าต่อแหล่งจ่ายไฟ Power in และ usb ในเวลาเดียวกัน เพราะจะส่งผลให้บอร์ดได้รับความเสียหาย ในบางครั้งอาจรวมไปถึงคอมพิวเตอร์
 
