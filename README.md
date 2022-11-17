@@ -71,3 +71,5 @@ SET MODE ประกอบไปด้วย
 ## Change logs
 8/10/2022
 - Update readme.
+17/11/2022
+- Fixed LED_BUILTIN not declare error.
