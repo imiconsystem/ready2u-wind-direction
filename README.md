@@ -48,12 +48,17 @@
 3. ดาวน์โหลดโค๊ดโปรแกรม https://github.com/imiconsystem/ready2u-wind-direction/releases
 4. เปิดไฟล์ ready2u-wind-direction.ino
 6. อัพโหลดไฟล์
-7. กดปุ่ม En บน Esp32 เพื่อเริ่มต้นใช้งาน
+7. กดปุ่ม En บน Esp32 เพื่อเริ่มต้นใช้งาน รอสักครู่เพื่อให้ระบบเชื่อมต่อเข้ากับ WiFi จากนั้นสามารถเข้าสู่หน้า Web monitoring ผ่านเว็บบราวเซอร์ด้วย URL http://windir.local
+
+## **หมายเหตุ
+
+ระบบปฏิบัติการของท่านต้องติดตั้ง mDNS ถึงจะสามารถเข้าดูหน้าเว็บด้วยโดเมนเนมได้ ซึ่งระบบปฏิบัติการส่วนมากจะติดตั้งให้โดยอัตโนมัติแล้ว  [>> เรียนรู้เพิ่มเติม](https://espressif.github.io/esp-protocols/mdns/en/index.html)
 
 
 ## การใช้งานตั้งค่า 'SET MODE' 
 - กด Switch ค้างไว้… แล้ว กด EN หรือ reset บน ESP32 1 ครั้ง จากนั้นรอ 2 วินาที จึงปล่อยปุ่ม Switch, Builtin LED บน ESP32 จะกระพริบเมื่อเข้าสู่ SET MODE
 - จากนั้นเชื่อมต่อระบบผ่าน WiFi ด้วย SSID = "WindDirDevkit" ; Password = "dddddddd";
+- สามารถเข้าสู่หน้าจอตั้งค่าผ่านเว็บบราวเซอร์ด้วย URL http://192.168.4.1
 
 SET MODE ประกอบไปด้วย
 

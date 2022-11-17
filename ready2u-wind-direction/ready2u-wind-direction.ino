@@ -17,8 +17,8 @@ String WiFipassword = "";
 
 String WiFiRSSI;
 String myIP;
-String webTitle = "Anemometer Alarm";
-String device_name = "anemo";
+String webTitle = "WindDirection";
+String device_name = "windir";
 
 int32_t WINDIR,setVar1, setVar2, setVar3, setVar4;
 
