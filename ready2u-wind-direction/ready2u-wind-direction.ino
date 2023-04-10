@@ -20,7 +20,9 @@ String myIP;
 String webTitle = "WindDirection";
 String device_name = "windir";
 
-int32_t WINDIR,setVar1, setVar2, setVar3, setVar4;
+String logString;
+
+int32_t WINDIR, setVar1, setVar2, setVar3, setVar4;
 
 
 struct ALARMLEV {
@@ -34,9 +36,12 @@ void setup() {
   Serial.begin(115200);  // For debug
   Serial.println("ESP start.");
   serialSetup();
+  oledSetup();
+  oledLogSetup();
   relaySetup();
   resetbuttonSetup();
   storageSetup();
+  buzzer_setup();
 
   WINDIR = 0;
 
@@ -44,32 +49,36 @@ void setup() {
   {
     SETMODE = true;
     wifiapSetup();
+    oledLogLoop();
 
 
 
   } else if (SETMODE == 2) {  // RESET FACTORY
+    logString = "Wait 10 seconds then push EN(reset) button.";
+    oledLogLoop();
     storageClear();
     // ESP.restart();
   } else {
     // RUN
+    logString = "System starting..";
+    oledLogLoop();
     webserverSetup();
   }
 }
 
 void controlRelay() {
 
-  if (WINDIR >= (360-setVar1) && WINDIR >= (0+setVar1) || WINDIR == 0) relayHi(R1); // North wind
+  if (WINDIR >= (360 - setVar1) && WINDIR >= (0 + setVar1) || WINDIR == 0) relayHi(R1);  // North wind
   else relayLo(R1);
 
-  if (WINDIR >= (90-setVar2) && WINDIR <= (90+setVar2) ) relayHi(R2); // East wind
+  if (WINDIR >= (90 - setVar2) && WINDIR <= (90 + setVar2)) relayHi(R2);  // East wind
   else relayLo(R2);
 
-  if (WINDIR >= (180-setVar3) && WINDIR <= (180+setVar3) ) relayHi(R3); // South wind
+  if (WINDIR >= (180 - setVar3) && WINDIR <= (180 + setVar3)) relayHi(R3);  // South wind
   else relayLo(R3);
 
-  if (WINDIR >= (270-setVar4) && WINDIR <= (270+setVar4) ) relayHi(R4); // West wind
+  if (WINDIR >= (270 - setVar4) && WINDIR <= (270 + setVar4)) relayHi(R4);  // West wind
   else relayLo(R4);
-
 }
 
 
@@ -80,16 +89,15 @@ void loop() {
     clientLoop();
     serialLoop();
     controlRelay();
+    oledLoop();
   } else if (SETMODE == 1)  // SET
   {
     Serial.println("SET MODE.");
     clientLoop();
     blinkSet();
-  }
-  else if (SETMODE == 2) {  //RESET
+  } else if (SETMODE == 2) {  //RESET
     blinkReset();
-  }
-  else {
+  } else {
     Serial.println("CLIENT MODE.");
     clientLoop();
   }
