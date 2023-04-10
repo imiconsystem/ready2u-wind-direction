@@ -32,7 +32,7 @@ struct ALARMLEV {
 struct ALARMLEV alarmlev = {};
 
 void setup() {
-
+  beep();
   Serial.begin(115200);  // For debug
   Serial.println("ESP start.");
   serialSetup();

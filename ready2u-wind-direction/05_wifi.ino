@@ -90,6 +90,7 @@ void webserverLoop() {
   while ((WiFi.status() != WL_CONNECTED) && (currentMillis - previousMillis >= interval)) {
     //Serial.println(WiFi.status());
     blinkWiFiLoss();
+    beepWiFiLoss();
     Serial.println("Reconnecting to WiFi...");
     WiFi.disconnect();
     WiFi.reconnect();
